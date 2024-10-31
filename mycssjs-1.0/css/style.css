@@ -2,7 +2,7 @@
 @import url(../../bootstrap-5.0.2/css/bootstrap.min.css);
 
 .navbar{
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 30%, rgba(0,0,0,0)100%);
+    background: linear-gradient(to bottom, rgb(14, 14, 14) 30%, rgba(0,0,0,0)100%);
 }
 
 .navbar-header-left{
@@ -27,7 +27,7 @@
 }
 
 .navbar-header-right a:hover{
-    color: #6dc4da;
+    color: var(--bs-pink);
     text-decoration: none;
 }
 
@@ -46,16 +46,19 @@ p{
 .font-brand{
     font-weight: 800;
     font-size: 50px;
-    background-color: var(--bs-white);
-    letter-spacing: 10px;
+    letter-spacing: .15em;
+}
+.font-brand-bg{
     padding-left: 40px;
+    padding-right: 40px;
+    background-color: var(--bs-white);
 }
 
 .font-title{
     font-size: 40px;
     font-weight: 800;
     line-height: 40px;
-    color: white;
+    color: #B0D9C6;
 }
 
 .font-title-line{
@@ -73,6 +76,14 @@ p{
 
 .color-blue{
     color: #6dc4da;
+}
+
+.color-lightgreen{
+    color:#B0D9C6;
+}
+
+.color-cream{
+    color:#ECDFCC;
 }
 
 .color-pink{
@@ -113,9 +124,20 @@ p{
     text-align: justify;
 }
 
-.blank-space-112px{
+.blank-space-full{
+    padding-top: 17rem !important;
+    padding-bottom: 17rem !important;
+}
+
+.blank-space-half{
+    padding-top: 8.5rem !important;
+    padding-bottom: 8.5rem !important;
+}
+
+.blank-space{
     margin-top: 7rem !important;
 }
+
 .width-10{
     width: 3rem !important;
 }
@@ -140,7 +162,7 @@ p{
 .button-next a {
     cursor: pointer;
     display: inline-block;
-    color: #ef4f7e;
+    color: #585B8C;
     position: relative;
     transition: 0.5s;
     text-decoration: none;
@@ -157,11 +179,11 @@ p{
 
 .button-next:hover a {
     padding-right: 25px;
-    color: #6dc4da;
+    color: var(--bs-pink);
 }
 
 .button-next:hover a:after {
-    color: #6dc4da;
+    color: var(--bs-pink);
     opacity: 1;
     right: 0;
 }
@@ -240,6 +262,12 @@ p{
 opacity: 0;
 }
 
+.img-hover-text {
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
 .img-hover-2::after {
     content: '';
     width: 100%;
@@ -269,7 +297,7 @@ opacity: 0;
 .img-hover-2-title span {
     transition: all 0.4s;
     opacity: 0;
-    color: #6dc4da;
+    color: #B0D9C6;
 }
 
 .img-hover-2:hover .img-hover-overlay {
@@ -319,6 +347,7 @@ z-index: 99;
 transform: translateX(-1.5rem);
 opacity: 0;
 transition: all 0.3s;
+font-size: 0.75rem;
 }
 
 
@@ -360,6 +389,45 @@ background: rgba(0, 0, 0, 0.8);
         padding-top: 3rem !important;
         padding-bottom: 6rem !important;
     }
+    
+}
+
+/* 
+  ##Device = Tablet
+  ##Screen = 767px to higher resolution
+*/
+@media (max-width: 992px) {
+    .img-hover-2-title {
+        position: absolute;
+        font-size: 20px;
+        bottom: 1rem;
+        left: 0;
+        transition: all 0.3s;
+        padding: 2rem 3rem;
+        z-index: 99;
+    }
+    .img-hover-3-description {
+        width: 30%;
+        font-size: 0px;
+    }
+    .img-hover-3-title{
+        /* margin-top: 3rem; */
+        color: #ef4f7e;
+    }
+    .img-hover{
+        margin-top: 1.5rem;
+    }
+    .carousel-item{
+        padding-top: 3rem !important;
+        padding-bottom: 6rem !important;
+    }
+    .font-title{
+        font-size: 25px;
+        font-weight: 800;
+        line-height: 40px;
+        color: #B0D9C6;
+    }
+    
 }
 
 /* 
@@ -370,11 +438,85 @@ background: rgba(0, 0, 0, 0.8);
     .img-hover{
         margin-top: 3rem;
     }
+    
     .carousel-item{
         padding-top: 3rem !important;
         padding-bottom: 6rem !important;
         flex: 0 0 auto;
         width: 100%;
+    }
+    .font-brand{
+        font-weight: 800;
+        font-size: 29px;
+        letter-spacing: .15em;
+        overflow: hidden; /* Ensures the content is not revealed until the animation */
+        border-right: .15em solid rgb(0, 0, 0); /* The typwriter cursor */
+        white-space: nowrap; /* Keeps the content on a single line */
+        margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+        animation: 
+            typing 3.5s steps(30, end),
+            blink-caret .5s step-end infinite;
+    }
+    .font-brand-bg{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background-color: var(--bs-white);
+    }
+    .navbar-header-left{
+        width: 64px;
+        height: auto;
+        margin-left: 16px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .blank-space-full{
+        padding-top: 15rem !important;
+        padding-bottom: 15rem !important;
+    }
+    .font-title-line{
+        font-weight: 800;
+        color: var(--bs-white);
+        font-size: 50px;
+        letter-spacing: 0px;
+        padding-left: 0px;
+    }
+    .font-title{
+        font-size: 40px;
+        font-weight: 800;
+        line-height: 40px;
+        color: #B0D9C6;
+    }
+    /*----Image Recenty Events------*/
+    .img-hover-text {
+        font-size: 17px;
+        text-transform: uppercase;
+        font-weight: 800;
+    }
+    .img-hover-text:hover{
+        transform: translateY(2rem);
+    }
+    .img-hover-1-description {
+        transform: translateY(0.5rem);
+        transition: all 0.4s;
+        Font-size: 0;
+        opacity: 0;
+    }
+    .img-hover-1:hover .img-hover-1-description {
+        opacity: 1;
+        transform: none;
+    }
+    .img-hover-2-title {
+        position: absolute;
+        font-size: 25px;
+        bottom: 1rem;
+        left: 0;
+        transition: all 0.3s;
+        padding: 2rem 3rem;
+        z-index: 99;
+    }
+    .img-hover-3-description {
+        width: 40%;
+        font-size: 0rem;
     }
 }
 /* ------- */
